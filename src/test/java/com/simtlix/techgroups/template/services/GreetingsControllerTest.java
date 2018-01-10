@@ -23,9 +23,12 @@ public class GreetingsControllerTest {
     private MockMvc mvc;
 
     @Test
-    public void getHello() throws Exception {
+    public void test_listAll() throws Exception {
+
+        String expectedResponse = "[{\"id\":1,\"greeting\":\"Hello Word!\"},{\"id\":2,\"greeting\":\"Hola Mundo!\"}]";
+
         mvc.perform(MockMvcRequestBuilders.get("/greetings").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Hello Word!")));
+                .andExpect(content().string(equalTo(expectedResponse)));
     }
 }
