@@ -30,8 +30,9 @@ public class UserController {
     }
 
     @GetMapping(produces =  MediaType.APPLICATION_JSON_VALUE)
-    public List<User> getAllUsers() {
-        return userService.findAll();
+    public ResponseEntity<List<User>> getAllUsers() {
+        List<User> users = userService.findAll();
+        return new ResponseEntity<>(users, HttpStatus.OK);
     }
 
     @GetMapping(value = "/{id}", produces =  MediaType.APPLICATION_JSON_VALUE)
