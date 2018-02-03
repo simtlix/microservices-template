@@ -2,10 +2,15 @@ package com.simtlix.techgroups.template.controllers;
 
 import com.simtlix.techgroups.template.model.User;
 import com.simtlix.techgroups.template.repositories.UserRepository;
+import com.simtlix.techgroups.template.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 /**
  * Controller which handles reqest for saving {@link User}s.
@@ -13,22 +18,25 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @author Aliaksei Bahdanau
  */
 @Controller
+@RequestMapping(value = "/api/users")
 public class UserController {
-    private final UserRepository userRepository;
 
     @Autowired
-    public UserController(final UserRepository userRepository) {
-        this.userRepository = userRepository;
+    private UserService userService;
+
+    @PostMapping(value = "/save", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> save(@RequestBody User user) {
+        User userSaved =  userService.save(user);
+        return new ResponseEntity<>(userSaved, HttpStatus.CREATED);
     }
 
-    @PostMapping(value = "/save")
-    public String save(@RequestParam("firstName") String firstName,
-                       @RequestParam("lastName") String lastName,
-                       @RequestParam("email") String email) {
+    @GetMapping(produces = "application/JSON")
+    public List<User> getAllUsers() {
+        return userService.findAll();
+    }
 
-        User user = new User(firstName, lastName, email);
-        userRepository.save(user);
-
-        return "redirect:/";
+    @GetMapping(value = "/{id}", produces = "application/JSON")
+    public User findById(@PathVariable("id") String userID) {
+        return userService.findOne(userID);
     }
 }
