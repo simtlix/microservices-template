@@ -14,5 +14,16 @@ services:
 
   api:
     image: template:latest
+    links:
+        - mongo
     ports:
       - "8080:8080"
+
+  mongo:
+    image: mongo
+     volumes:
+      - "./mongodb/data:/data/db"
+    container_name: mongodb
+    ports:  # for demo/debug purpose only
+      - 27017:27017
+    restart: always

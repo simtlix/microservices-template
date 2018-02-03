@@ -1,4 +1,5 @@
 target
 docker/postgres/data
+docker/mongodb/data
 .idea
 *.iml
