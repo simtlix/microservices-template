@@ -21,6 +21,8 @@ services:
 
   mongo:
     image: mongo
+     volumes:
+      - "./mongodb/data:/data/db"
     container_name: mongodb
     ports:  # for demo/debug purpose only
       - 27017:27017

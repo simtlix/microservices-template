@@ -1,7 +1,6 @@
 package com.simtlix.techgroups.template.controllers;
 
 import com.simtlix.techgroups.template.model.User;
-import com.simtlix.techgroups.template.repositories.UserRepository;
 import com.simtlix.techgroups.template.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -30,13 +29,14 @@ public class UserController {
         return new ResponseEntity<>(userSaved, HttpStatus.CREATED);
     }
 
-    @GetMapping(produces = "application/JSON")
+    @GetMapping(produces =  MediaType.APPLICATION_JSON_VALUE)
     public List<User> getAllUsers() {
         return userService.findAll();
     }
 
-    @GetMapping(value = "/{id}", produces = "application/JSON")
-    public User findById(@PathVariable("id") String userID) {
-        return userService.findOne(userID);
+    @GetMapping(value = "/{id}", produces =  MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> findById(@PathVariable("id") String userID) {
+        User user =  userService.findOne(userID);
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 }
