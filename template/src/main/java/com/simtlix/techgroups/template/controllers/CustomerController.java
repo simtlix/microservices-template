@@ -1,7 +1,7 @@
-package com.simtlix.techgroups.template.services;
+package com.simtlix.techgroups.template.controllers;
 
-import com.simtlix.techgroups.template.business.CustomerService;
 import com.simtlix.techgroups.template.model.Customer;
+import com.simtlix.techgroups.template.services.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

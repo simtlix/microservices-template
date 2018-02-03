@@ -1,8 +1,8 @@
 package com.simtlix.techgroups.template.configuration;
 
-import com.simtlix.techgroups.template.business.CustomerService;
-import com.simtlix.techgroups.template.business.CustomerServiceImpl;
-import com.simtlix.techgroups.template.repository.CustomerRepository;
+import com.simtlix.techgroups.template.services.CustomerService;
+import com.simtlix.techgroups.template.services.CustomerServiceImpl;
+import com.simtlix.techgroups.template.repositories.CustomerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

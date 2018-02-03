@@ -36,8 +36,7 @@ public class GreetingsControllerIT {
     public void getHello() throws Exception {
         String expectedResponse = "[{\"id\":1,\"greeting\":\"Hello Word!\"},{\"id\":2,\"greeting\":\"Hola Mundo!\"}]";
 
-        ResponseEntity<String> response = template.getForEntity(base.toString() + "greetings/",
-                String.class);
+        ResponseEntity<String> response = template.getForEntity(base.toString() + "greetings/", String.class);
         assertThat(response.getBody(), equalTo(expectedResponse));
     }
 }

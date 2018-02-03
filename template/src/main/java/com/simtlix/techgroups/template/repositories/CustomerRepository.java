@@ -1,4 +1,4 @@
-package com.simtlix.techgroups.template.repository;
+package com.simtlix.techgroups.template.repositories;
 
 import com.simtlix.techgroups.template.model.Customer;
 import org.springframework.data.repository.CrudRepository;

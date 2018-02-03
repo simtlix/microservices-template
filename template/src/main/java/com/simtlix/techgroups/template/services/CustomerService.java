@@ -1,4 +1,4 @@
-package com.simtlix.techgroups.template.business;
+package com.simtlix.techgroups.template.services;
 
 import com.simtlix.techgroups.template.model.Customer;
 
