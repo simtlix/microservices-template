@@ -1,1 +1,1 @@
-docker-compose -f docker/docker-compose-local-volumes.yml logs --follow
+docker-compose -f docker/docker-compose.yml logs --follow

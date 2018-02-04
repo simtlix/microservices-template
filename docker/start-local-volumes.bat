@@ -1,1 +1,1 @@
-docker-compose -f docker/docker-compose-local-volumes.yml up -d
+docker-compose -f docker/docker-compose.yml up -d

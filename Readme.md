@@ -17,7 +17,4 @@ http://localhost:8080/greetings
 
 ## Known issues with Windows Docker volumes ##
 * Go to Docker preferences and grant permissions on the local storage.
-* If issue remains, create an external volume and use it explicitely by:
-1. Create local volume: docker volume create --name postgres-volume -d local
-  1. For more information: https://forums.docker.com/t/trying-to-get-postgres-to-work-on-persistent-windows-mount-two-issues/12456/5
-2. docker-compose -f doker/docker-compose-local-volumes.yml up -d
+* Review https://forums.docker.com/t/trying-to-get-postgres-to-work-on-persistent-windows-mount-two-issues/12456/5
