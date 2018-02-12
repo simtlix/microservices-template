@@ -1,7 +1,10 @@
-# How do I get set up? #
-NOTE: Example command line orders are relative to the root of the project.
+# Microservices Template #
+The aim of this repository is to provide a quick start for the development of microservices. We try to keep the template as simple as posible. This is a live template. We´ll keep adding functionality and release new versions. 
 
-## Install Docker ##
+## Getting Started ##
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
+
+### Install Docker ###
 * Download and install Docker: https://docs.docker.com/install/
 * Verify docker installation: docker version
 * Verify docker-compose installation: docker-compose version
