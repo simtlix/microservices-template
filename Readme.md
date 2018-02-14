@@ -1,9 +1,8 @@
 # Microservices Template #
 The aim of this repository is to provide a quick start for the development of microservices. We try to keep the template as simple as posible. We´ll continue adding functionality and releasing new versions. 
 
-For an intro to Microservices architecture, please take a look at this slides:
+For an intro to Microservices architecture, please take a look at these slides:
 http://www.simtlix.com/en/tech-talk-about-microservices-by-florencia-bonansea/
-
 
 ## Getting Started ##
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes
@@ -13,14 +12,18 @@ These instructions will get you a copy of the project up and running on your loc
 * Verify docker installation: docker version
 * Verify docker-compose installation: docker-compose version
 
-### Build Docker containers ###
-./docker/build.sh
-
-### Execute the environment ###
-docker-compose -f docker/docker-compose.yml up -d
+### Build and run Docker containers ###
+* Windows: ./start.bat
+* Unix: ./start.sh
 
 ### Verify environment is working ###
 http://localhost:8080/greetings
+
+### Clear the environment ###
+Once you finished playing around and you want to clear allocated resources (such as space, memory and ports), you have to execute:
+```bash
+docker-compose -f docker/docker-compose.yml down
+```
 
 ### Known issues with Windows Docker volumes ###
 * Go to Docker preferences and grant permissions on the local storage.
@@ -54,6 +57,3 @@ curl -X POST \
 ## Authors ##
 Microservices Technology Group @ Simtlix
 http://www.simtlix.com/en/technology-groups
-
-
-
