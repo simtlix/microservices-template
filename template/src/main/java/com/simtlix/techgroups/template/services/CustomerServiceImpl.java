@@ -2,6 +2,8 @@ package com.simtlix.techgroups.template.services;
 
 import com.simtlix.techgroups.template.model.Customer;
 import com.simtlix.techgroups.template.repositories.CustomerRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,10 +11,12 @@ import java.util.List;
 /**
  * Created by Facundo on 1/29/2018.
  */
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
 
+    @Autowired
     public CustomerServiceImpl(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
     }
