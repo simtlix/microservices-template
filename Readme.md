@@ -54,6 +54,26 @@ curl -X POST \
 }'
 ```
 
+### PostgresDB CRUD ###
+```bash 
+curl -X GET \
+  http://localhost:8080/api/customers \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+ ``` 
+
+```bash
+curl -X POST \
+  http://localhost:8080/api/customers \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+        "name": "Jose",
+        "lastName": "Perez",
+        "email": "joseperez@gmail.com"
+    }'
+```
+
 ## Authors ##
 Microservices Technology Group @ Simtlix
 http://www.simtlix.com/en/technology-groups
